@@ -1,10 +1,7 @@
-import 'dart:ffi';
-import 'dart:math';
-
-import 'package:botcamp_flutter_challenge/bmi_result_screen.dart';
-import 'package:botcamp_flutter_challenge/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'layout/home_layout.dart';
 
 void main() {
   runApp(BmiScreen());
@@ -18,13 +15,11 @@ class BmiScreen extends StatefulWidget {
 }
 
 class _BmiScreenState extends State<BmiScreen> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen()
-      ,
+      home: HomeLayout(),
     );
   }
 }
