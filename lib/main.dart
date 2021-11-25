@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'layout/home_layout.dart';
 
 void main() {
-  runApp(BmiScreen());
+  runApp(const BmiScreen());
 }
 
 class BmiScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class BmiScreen extends StatefulWidget {
 class _BmiScreenState extends State<BmiScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeLayout(),
     );
