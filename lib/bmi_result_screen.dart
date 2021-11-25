@@ -1,10 +1,13 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
 class BMIRESULT extends StatelessWidget {
-   final int result;
-   final bool isMale;
-   final int age;
-  BMIRESULT({required this.result,required this.isMale, required this.age});
+  final int result;
+  final bool isMale;
+  final int age;
+  const BMIRESULT(
+      {required this.result, required this.isMale, required this.age});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,15 +20,15 @@ class BMIRESULT extends StatelessWidget {
           children: [
             Text(
               'Gender : ${isMale ? 'Male' : 'Female'}',
-              style:const  TextStyle(fontWeight: FontWeight.bold,fontSize:25),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             Text(
-              'Result : ${result}',
-              style:const TextStyle(fontWeight: FontWeight.bold,fontSize:25),
+              'Result : $result',
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             Text(
-              'Age : ${age}',
-              style:const TextStyle(fontWeight: FontWeight.bold,fontSize:25),
+              'Age : $age',
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
           ],
         ),
