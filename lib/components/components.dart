@@ -1,39 +1,31 @@
 import 'package:flutter/material.dart';
 
-Widget defaultFormField({
+Widget textFormField({
   required TextEditingController controller,
-  required TextInputType type,
+  required TextInputType inputType,
   required Function validate,
   required String label,
-  required IconData prefix,
-  bool isClickable = true,
+  required IconData prefixIconData,
   Function? onSubmit,
-  Function? onTap,
+  Function? onPressed,
   Function? onChange,
-}) =>
-    Form(
-      child: TextFormField(
-        onTap: () {
-          onTap!();
-        },
-        controller: controller,
-        keyboardType: type,
-        onFieldSubmitted: (s) {
-          onSubmit ?? (s);
-        },
-        onChanged: (String value) {
-          onChange!(value);
-        },
-        validator: (String? value) {
-          return '';
-        },
-        enabled: isClickable,
-        decoration: InputDecoration(
-          labelText: label,
-          prefixIcon: Icon(
-            prefix,
-          ),
-          border: const OutlineInputBorder(),
-        ),
-      ),
-    );
+}) {
+  return TextFormField(
+    onChanged: (value) {
+      onChange!(value);
+    },
+    controller: controller,
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      labelText: label,
+      border: const OutlineInputBorder(),
+      prefixIcon: Icon(prefixIconData),
+    ),
+    onTap: () {
+      onPressed!();
+    },
+    validator: (value) {
+      validate(value!);
+    },
+  );
+}
