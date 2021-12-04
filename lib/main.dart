@@ -19,7 +19,7 @@ class _BmiScreenState extends State<BmiScreen> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeLayout(),
+      home: TodoApp(),
     );
   }
 }
